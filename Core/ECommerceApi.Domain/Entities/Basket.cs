@@ -8,5 +8,9 @@ namespace ECommerceApi.Domain.Entities
 {
     internal class Basket
     {
+        public int ID { get; set; }
+        public string AppUserEmail { get; set; } 
+        public List<BasketItem> BasketItems { get; set; }
+
     }
 }
