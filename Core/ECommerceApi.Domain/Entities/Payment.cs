@@ -1,6 +1,7 @@
 ﻿using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Controllers.Bases;
+using ECommerceApi.Domain.Entities.Common;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ECommerceApi.Domain.Entities
 {
 
     
-    public class Payment
+    public class Payment 
     {
         public IConfiguration Configuration { get; set; }
 

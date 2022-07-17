@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ECommerceApi.Domain.Entities.Common;
+using ECommerceApi.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ECommerceApi.Domain.Entities
 {
-    public class BasketItem
+    public class BasketItem : IBaseEntity
     {
         public int ID { get; set; }
         public int ProductID { get; set; }
@@ -16,5 +18,9 @@ namespace ECommerceApi.Domain.Entities
         public int Quantity { get; set; }
         public string ImgUrl { get; set; }
         public decimal UnitPrice { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
+        public Status Status { get; set; }
     }
 }

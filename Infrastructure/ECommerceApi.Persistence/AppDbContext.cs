@@ -1,4 +1,5 @@
 ﻿using ECommerceApi.Domain.Entities;
+using ECommerceApi.Persistence.Entity_Configuration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -36,6 +37,9 @@ namespace ECommerceApi.Persistence
             builder.ApplyConfiguration(new ProductConfig());
             builder.ApplyConfiguration(new ProductRatingConfig());
             builder.ApplyConfiguration(new OrderDetailConfig());
+            builder.ApplyConfiguration(new AddressConfig());
+            builder.ApplyConfiguration(new BasketConfig());
+            builder.ApplyConfiguration(new BasketItemConfig());
 
 
 

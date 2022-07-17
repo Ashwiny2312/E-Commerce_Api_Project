@@ -1,4 +1,5 @@
-﻿using ECommerceApi.Domain.Enums;
+﻿using ECommerceApi.Domain.Entities.Common;
+using ECommerceApi.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ECommerceApi.Domain.Entities
 {
-    public class Product
+    public class Product :IBaseEntity
     {
 
         public int Id { get; set; }
