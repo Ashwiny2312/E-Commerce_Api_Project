@@ -26,7 +26,7 @@ namespace ECommerceApi.Application.CQRS.Product.Handlers.Command
         public async Task<CreateProductCommandResponse> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
 
-            var model = _mapper.Map<ECP.Domain.Models.Entities.Product>(request);
+            var model = _mapper.Map<ECommerceApi.Domain.Entities.Product>(request);
 
             await _productRepository.Create(model);
 
