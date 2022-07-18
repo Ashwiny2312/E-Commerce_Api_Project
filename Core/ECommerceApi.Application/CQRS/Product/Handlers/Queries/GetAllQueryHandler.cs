@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace ECommerceApi.Application.CQRS.Product.Handlers.Queries
 {
 
-    public class GetAllQueryHandler : IRequestHandler<List<GetAllProductQueryRequest, GetAllProductQueryResponse>>
+    public class GetAllQueryHandler : IRequestHandler<GetAllProductQueryRequest, List<GetAllProductQueryResponse>>
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
@@ -24,18 +24,14 @@ namespace ECommerceApi.Application.CQRS.Product.Handlers.Queries
         }
 
 
-        public async Task<GetAllProductQueryResponse> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
+        public async Task<List<GetAllProductQueryResponse>> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
         {
 
-            var model = _mapper.Map<ECommerceApi.Domain.Entities.Product>(request);
 
-            await _productRepository.Create(model);
 
-            return new GetAllProductQueryResponse
-            {
-                IsSuccess = true,
-                ProductId = model.Id
-            };
+           
+
+            return model;
         }
     }
 }
