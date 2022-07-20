@@ -27,11 +27,30 @@ namespace ECommerceApi.Application.CQRS.Product.Handlers.Queries
         public async Task<List<GetAllProductQueryResponse>> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
         {
 
+            var products = await _productRepository.GetFilteredList(
+                selector: x => new GetAllProductQueryResponse
+                {
+
+                    Id = x.Id,
+                    Name = x.Name,
+                    Description = x.Description,
+                    Price = x.Price,
+                    Size = x.Size,
+                    Color = x.Color,
+                    ImagePath = x.ImagePath,
+                    Stock = x.Stock,
+                    Category_Name = x.Category.Name
+
+                },
+                expression: x => x.Status != Domain.Enums.Status.Passive,
+                orderBy: x => x.OrderBy(x => x.Name));
+               // include: x => x.Include(x => x.Category));
+
 
 
            
 
-            return model;
+            return products;
         }
     }
 }
