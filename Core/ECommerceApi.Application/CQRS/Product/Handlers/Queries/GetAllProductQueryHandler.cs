@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 namespace ECommerceApi.Application.CQRS.Product.Handlers.Queries
 {
 
-    public class GetAllQueryHandler : IRequestHandler<GetAllProductQueryRequest, List<GetAllProductQueryResponse>>
+    public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, List<GetAllProductQueryResponse>>
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public GetAllQueryHandler(IProductRepository productRepository, IMapper mapper)
+        public GetAllProductQueryHandler(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
             _mapper = mapper;

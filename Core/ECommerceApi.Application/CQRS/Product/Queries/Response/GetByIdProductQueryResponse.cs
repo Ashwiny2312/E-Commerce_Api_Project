@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ECommerceApi.Application.CQRS.Product.Queries.Response
 {
-    internal class GetByIdProductQueryResponse
+    public class  GetByIdProductQueryResponse
     {
         public int Id { get; set; }
         public string Name { get; set; }
