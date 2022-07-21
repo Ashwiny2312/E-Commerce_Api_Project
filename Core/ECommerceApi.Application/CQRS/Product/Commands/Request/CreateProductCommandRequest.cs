@@ -25,7 +25,7 @@ namespace ECommerceApi.Application.CQRS.Product.Commands.Request
         public string ImagePath { get; set; }
         public int Stock { get; set; }
         public int Category_Id { get; set; }
-        public Category Category { get; set; }
+        public  ECommerceApi.Domain.Entities.Category Category { get; set; }
 
         public DateTime CreateDate => DateTime.Now;
 

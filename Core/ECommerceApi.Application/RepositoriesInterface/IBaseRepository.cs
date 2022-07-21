@@ -12,6 +12,7 @@ namespace ECommerceApi.Application.RepositoriesInterface
     {
         Task Create(T entity);
         void Update(T entity);
+        Task Commit();
 
         void Delete(T entity);
         Task<T> GetDefault(Expression<Func<T, bool>> expression);

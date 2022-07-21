@@ -22,6 +22,10 @@ namespace ECommerceApi.Persistence.RepositoriesConcretes
             table = _appDbContext.Set<T>();
         }
 
+        public async Task Commit()
+        {
+            await _appDbContext.SaveChangesAsync();
+        }
         public async Task<bool> Any(Expression<Func<T, bool>> expression)
         {
             return await table.AnyAsync(expression);
