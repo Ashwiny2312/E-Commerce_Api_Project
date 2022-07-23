@@ -37,7 +37,7 @@ namespace ECommerceApi.Persistence.RepositoriesConcretes
         }
 
 
-        public void Delete(T entity)
+        public async void Delete(T entity)
         {
 
         }

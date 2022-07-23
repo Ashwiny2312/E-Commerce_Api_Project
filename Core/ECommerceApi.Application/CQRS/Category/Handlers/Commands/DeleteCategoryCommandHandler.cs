@@ -13,32 +13,36 @@ namespace ECommerceApi.Application.CQRS.Category.Handlers.Commands
 {
 
 
-    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest, CreateCategoryCommandResponse>
+    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommandRequest, DeleteCategoryCommandResponse>
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
 
-        public CreateCategoryCommandHandler(ICategoryRepository categoryRepository, IMapper mapper)
+        public DeleteCategoryCommandHandler(ICategoryRepository categoryRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
             _mapper = mapper;
         }
 
 
-        public async Task<CreateCategoryCommandResponse> Handle(CreateCategoryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<DeleteCategoryCommandResponse> Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
         {
 
-            var model = _mapper.Map<ECommerceApi.Domain.Entities.Category>(request);
 
-            await _categoryRepository.Create(model);
+            var category = await _categoryRepository.GetDefault(x => x.Id == request.Id);
 
-            return new CreateCategoryCommandResponse
+            category.Status = Domain.Enums.Status.Passive;
+            category.DeleteDate = DateTime.Now;
+
+            await _categoryRepository.Commit();
+
+            return new DeleteCategoryCommandResponse
             {
                 IsSuccess = true,
-                CategoryId = model.Id
             };
         }
     }
+
 
 
 }
