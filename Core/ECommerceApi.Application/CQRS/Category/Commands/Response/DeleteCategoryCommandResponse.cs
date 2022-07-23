@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ECommerceApi.Application.CQRS.Category.Commands.Response
 {
-    internal class DeleteCategoryCommandResponse
+    public class DeleteCategoryCommandResponse
     {
+        public bool IsSuccess { get; set; }
     }
 }

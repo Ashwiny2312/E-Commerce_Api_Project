@@ -16,12 +16,10 @@ namespace ECommerceApi.Application.CQRS.Product.Handlers.Queries
     public class GetProductByCategoryHandler : IRequestHandler<GetProductByCategoryRequest, List< GetProductByCategoryResponse>>
     {
         private readonly IProductRepository _productRepository;
-        private readonly IMapper _mapper;
 
-        public GetProductByCategoryHandler(IProductRepository productRepository, IMapper mapper)
+        public GetProductByCategoryHandler(IProductRepository productRepository)
         {
             _productRepository = productRepository;
-            _mapper = mapper;
         }
 
         public async Task<List<GetProductByCategoryResponse>> Handle(GetProductByCategoryRequest request, CancellationToken cancellationToken)
