@@ -3,6 +3,7 @@ using ECommerceApi.Application.CQRS.Product.Queries.Request;
 using ECommerceApi.Application.CQRS.Product.Queries.Response;
 using ECommerceApi.Application.RepositoriesInterface;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,12 +44,12 @@ namespace ECommerceApi.Application.CQRS.Product.Handlers.Queries
 
                 },
                 expression: x => x.Status != Domain.Enums.Status.Passive,
-                orderBy: x => x.OrderBy(x => x.Name));
-               // include: x => x.Include(x => x.Category));
+                orderBy: x => x.OrderBy(x => x.Name),
+                include: x => x.Include(x => x.Category));
 
 
 
-           
+
 
             return products;
         }
