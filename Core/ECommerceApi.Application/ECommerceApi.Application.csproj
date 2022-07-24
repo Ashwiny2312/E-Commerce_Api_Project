@@ -21,9 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\Category\Handlers\Queries\" />
-    <Folder Include="CQRS\Category\Queries\Response\" />
-    <Folder Include="CQRS\Category\Queries\Request\" />
     <Folder Include="Model\VMs\" />
   </ItemGroup>
 
