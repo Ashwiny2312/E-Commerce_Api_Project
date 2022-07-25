@@ -13,7 +13,7 @@ namespace ECommerceApi.Persistence.Entity_Configuration
     {
         public override void Configure(EntityTypeBuilder<BasketItem> builder)
         {
-            builder.HasKey(x => x.ID);
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.AppUserEmail).IsRequired(false);
 
 

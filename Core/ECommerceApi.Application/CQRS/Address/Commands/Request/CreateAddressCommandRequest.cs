@@ -1,17 +1,17 @@
-﻿using ECommerceApi.Domain.Entities.Common;
+﻿using ECommerceApi.Application.CQRS.Address.Commands.Response;
+using ECommerceApi.Domain.Entities;
 using ECommerceApi.Domain.Enums;
+using MediatR;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerceApi.Domain.Entities
+namespace ECommerceApi.Application.CQRS.Address.Commands.Request
 {
-    public class Address : IBaseEntity
+    public class CreateAddressCommandRequest : IRequest<CreateAddressCommandResponse>
     {
-        public int Id { get; set; }
         public string Street { get; set; }
 
 
@@ -28,11 +28,10 @@ namespace ECommerceApi.Domain.Entities
         public string UserID { get; set; }
         public AppUser AppUser { get; set; }
 
-        public DateTime CreateDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public DateTime? DeleteDate { get; set; }
-        public Status Status { get; set; }
-        public List<Order> Orders { get; set; }
+        public DateTime CreateDate => DateTime.Now;
+
+        public Status Status => Status.Active;
+
 
     }
 }

@@ -10,7 +10,7 @@ namespace ECommerceApi.Domain.Entities
 {
     public class Basket :  IBaseEntity
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string AppUserEmail { get; set; } 
         public List<BasketItem> BasketItems { get; set; }
         public DateTime CreateDate { get; set; }
