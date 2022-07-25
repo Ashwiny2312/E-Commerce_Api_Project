@@ -15,7 +15,7 @@ namespace ECommerceApi.Persistence.Entity_Configuration
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.AppUserEmail).IsRequired(false);
-
+            builder.HasOne(x => x.BasketItems).WithMany(x => x.Basketies).HasForeignKey(x => x.BasketItem_Id);
 
             base.Configure(builder);
         }

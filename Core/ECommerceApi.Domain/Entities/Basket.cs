@@ -12,7 +12,8 @@ namespace ECommerceApi.Domain.Entities
     {
         public int Id { get; set; }
         public string AppUserEmail { get; set; } 
-        public List<BasketItem> BasketItems { get; set; }
+        public string BasketItem_Id { get; set; } 
+        public BasketItem BasketItems  { get; set; } 
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }

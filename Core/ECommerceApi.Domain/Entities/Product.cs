@@ -31,6 +31,7 @@ namespace ECommerceApi.Domain.Entities
 
 
         public List<Order_Detail> Order_Details { get; set; }
+        public List<BasketItem> BasketItems { get; set; }
         public List<Product_Comment> Product_Comments { get; set; }
         public List<Product_Rating> Product_Ratings { get; set; }
 

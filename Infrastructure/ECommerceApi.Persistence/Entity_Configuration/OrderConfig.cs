@@ -25,6 +25,11 @@ namespace ECommerceApi.Persistence.Entity_Configuration
 
 
 
+            builder.HasOne(x => x.Address)
+                .WithMany(x => x.Orders)
+                .HasForeignKey(x => x.AddressID);
+
+
             base.Configure(builder);
         }
     }

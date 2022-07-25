@@ -21,7 +21,10 @@ namespace ECommerceApi.Persistence.Entity_Configuration
             builder.Property(x => x.Zip).IsRequired(false);
             builder.Property(x => x.Street2).IsRequired(false);
             builder.Property(x => x.State).IsRequired(false);
-
+            builder.HasOne(x => x.AppUser)
+               .WithMany(x => x.Addresses)
+               .HasForeignKey(x => x.UserID);
+             
 
             base.Configure(builder);
         }

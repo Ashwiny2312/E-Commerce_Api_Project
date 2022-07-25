@@ -16,11 +16,13 @@ namespace ECommerceApi.Domain.Entities
         public string ProductName { get; set; }
         public string AppUserEmail { get; set; } 
         public int Quantity { get; set; }
-        public string ImgUrl { get; set; }
+
         public decimal UnitPrice { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }
         public Status Status { get; set; }
+        public List<Basket> Basketies { get; set; }
+
     }
 }
