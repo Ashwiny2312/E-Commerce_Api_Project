@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\Address\Handlers\" />
+    <Folder Include="CQRS\Address\Handlers\Queries\" />
     <Folder Include="CQRS\Address\Queries\" />
     <Folder Include="CQRS\AppUser\" />
     <Folder Include="CQRS\Product_Comment\" />

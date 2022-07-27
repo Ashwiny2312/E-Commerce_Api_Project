@@ -7,6 +7,8 @@ using Autofac;
 using System.Text;
 using System.Threading.Tasks;
 using ECommerceApi.Application.RepositoriesInterface;
+using AutoMapper;
+using ECommerceApi.Application.Mapper;
 
 namespace ECommerceApi.Application.IoC
 {
