@@ -26,7 +26,7 @@ namespace ECommerceApi.Application.CQRS.Address.Commands.Request
         public string Zip { get; set; }
 
         public string UserID { get; set; }
-        public AppUser AppUser { get; set; }
+        public Domain.Entities.AppUser AppUser { get; set; }
 
         public DateTime CreateDate => DateTime.Now;
 
