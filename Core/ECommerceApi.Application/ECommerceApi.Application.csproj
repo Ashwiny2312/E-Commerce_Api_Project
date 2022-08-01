@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\AppUser\Handlers\Queries\" />
     <Folder Include="CQRS\Product_Comment\" />
     <Folder Include="Model\VMs\" />
   </ItemGroup>
