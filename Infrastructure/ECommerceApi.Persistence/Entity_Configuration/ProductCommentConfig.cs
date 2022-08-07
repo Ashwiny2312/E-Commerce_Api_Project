@@ -23,7 +23,7 @@ namespace ECommerceApi.Persistence.Entity_Configuration
             .WithMany(x => x.Product_Comments)
             .HasForeignKey(x => x.Product_Id);
 
-            builder.Property(x => x.Text).IsRequired();
+            builder.Property(x => x.Text).HasMaxLength(500).IsRequired();
 
 
 
