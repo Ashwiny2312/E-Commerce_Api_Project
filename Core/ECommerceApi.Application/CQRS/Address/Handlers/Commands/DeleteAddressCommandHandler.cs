@@ -16,12 +16,10 @@ namespace ECommerceApi.Application.CQRS.Address.Handlers.Commands
     public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommandRequest, DeleteAddressCommandResponse>
     {
         private readonly IAddressRepository _addressRepository;
-        private readonly IMapper _mapper;
 
-        public DeleteAddressCommandHandler(IAddressRepository addressRepository, IMapper mapper)
+        public DeleteAddressCommandHandler(IAddressRepository addressRepository)
         {
             _addressRepository = addressRepository;
-            _mapper = mapper;
         }
 
 

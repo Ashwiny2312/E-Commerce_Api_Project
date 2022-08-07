@@ -15,12 +15,10 @@ namespace ECommerceApi.Application.CQRS.Product_Comment.Handlers.Commands
     public class DeletePostCommentCommandHandler : IRequestHandler<DeletePostCommentCommandRequest, DeletePostCommentCommandResponse>
     {
         private readonly IProductCommentRepository _productCommentRepository;
-        private readonly IMapper _mapper;
 
-        public DeletePostCommentCommandHandler(IProductCommentRepository productCommentRepository, IMapper mapper)
+        public DeletePostCommentCommandHandler(IProductCommentRepository productCommentRepository)
         {
             _productCommentRepository = productCommentRepository;
-            _mapper = mapper;
         }
 
 

@@ -16,12 +16,10 @@ namespace ECommerceApi.Application.CQRS.Category.Handlers.Commands
     public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommandRequest, DeleteCategoryCommandResponse>
     {
         private readonly ICategoryRepository _categoryRepository;
-        private readonly IMapper _mapper;
 
-        public DeleteCategoryCommandHandler(ICategoryRepository categoryRepository, IMapper mapper)
+        public DeleteCategoryCommandHandler(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;
-            _mapper = mapper;
         }
 
 

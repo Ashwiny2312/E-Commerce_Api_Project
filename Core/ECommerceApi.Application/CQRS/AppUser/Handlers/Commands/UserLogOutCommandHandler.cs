@@ -16,13 +16,11 @@ namespace ECommerceApi.Application.CQRS.AppUser.Handlers.Commands
     public class UserLogOutCommandHandler : IRequestHandler<UserLogOutCommandRequest, UserLogOutCommandResponse>
     {
         private readonly IAppUserRepository _appUserRepository;
-        private readonly IMapper _mapper;
         private readonly UserManager<ECommerceApi.Domain.Entities.AppUser> _userManager;
         private readonly SignInManager<Domain.Entities.AppUser> _signInManager;
-        public UserLogOutCommandHandler(IAppUserRepository appUserRepository, IMapper mapper, UserManager<ECommerceApi.Domain.Entities.AppUser> userManager, SignInManager<Domain.Entities.AppUser> signInManager)
+        public UserLogOutCommandHandler(IAppUserRepository appUserRepository,  UserManager<ECommerceApi.Domain.Entities.AppUser> userManager, SignInManager<Domain.Entities.AppUser> signInManager)
         {
             _appUserRepository = appUserRepository;
-            _mapper = mapper;
             _userManager = userManager;
             _signInManager = signInManager;
         }
