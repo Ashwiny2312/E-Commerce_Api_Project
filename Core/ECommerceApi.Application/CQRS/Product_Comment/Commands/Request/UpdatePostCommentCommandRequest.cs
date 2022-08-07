@@ -9,9 +9,17 @@ using System.Threading.Tasks;
 
 namespace ECommerceApi.Application.CQRS.Product_Comment.Commands.Request
 {
-    public class DeletePostCommentCommandRequest : IRequest<DeletePostCommentCommandResponse>
+    public class UpdatePostCommentCommandRequest : IRequest<UpdatePostCommentCommandResponse>
     {
         public int Id { get; set; }
+
+        public int Product_Id { get; set; }
+        public string User_Id { get; set; }
+        public string Text { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public Status Status { get; set; }
+
+
 
     }
 }
