@@ -1,4 +1,5 @@
 ﻿using ECommerceApi.Application.CQRS.Category.Commands.Response;
+using ECommerceApi.Domain.Enums;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,9 @@ namespace ECommerceApi.Application.CQRS.Category.Commands.Request
         public int Id { get; set; } 
         public string Name { get; set; }
 
+
         public DateTime CreateDate => DateTime.Now;
+
+        public Status Status => Status.Active;
     }
 }
