@@ -22,6 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="CQRS\Order\Handlers\Queries\" />
+    <Folder Include="CQRS\Order\Queries\" />
     <Folder Include="CQRS\Product_Rating\Handlers\Queries\" />
     <Folder Include="CQRS\Product_Rating\Queries\Request\" />
     <Folder Include="CQRS\Product_Rating\Queries\Response\" />
